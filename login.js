@@ -6,8 +6,8 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
   const message = document.getElementById("message");
 
   // Set your correct credentials here
-  const correctLoginId = "web";
-  const correctPassword = "dev";
+  const correctLoginId = "";
+  const correctPassword = "";
 
   if (loginId === correctLoginId && password === correctPassword) {
     message.style.color = "green";
@@ -21,3 +21,4 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     message.textContent = "Incorrect login ID or password.";
   }
 });
+
