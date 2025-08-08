@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjay Rungta Group of Institution</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="Rungta_Logo.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #006494;
+      color: white;
+    }
+
+    nav {
+      background-color: #24477B;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links > li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .nav-links li:hover > ul {
+      display: block;
+    }
+
+    .nav-links ul {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      top: 40px;
+      left: 0;
+      min-width: 180px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .nav-links ul li {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav-links ul li a {
+      color: black;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 5px;
+      padding: 2px 8px;
+    }
+
+    .search-box input {
+      border: none;
+      padding: 6px;
+      outline: none;
+    }
+
+    .search-box i {
+      color: #24477B;
+    }
+
+    .highlight {
+      color: #D7D700;
+      font-weight: bold;
+    }
+
+    .red-button {
+      background-color: #BD2A1D;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 3px;
+    }
+
+    .dropdown-arrow::after {
+      content: ' ▼';
+      font-size: 10px;
+    }
+
+    /* Student Life Section */
+    .container {
+      padding: 60px 100px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: inline-block;
+      
+      padding: 90px;
+      margin-top: -100px;
+    }
+    
+    
+    .Learn {
+        display: inline-block;
+        position: relative;
+        display: inline-block;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 37px;
+    }
+
+    .Hostle {
+       display: inline-block ;
+       box-sizing: border-box;
+       margin: 3px;
+       position: relative;
+    }
+
+    .Play {
+        display: inline-block;
+         margin: 3px;
+         position: relative;
+    }
+
+    .Wifi-campus {
+        display: inline-block; 
+        position: relative;
+    }
+    
+    .a {
+         display: flex;
+        align-items: flex-start;
+    }
+
+    .b, .c {
+        display: inline-block;
+        position: relative;
+    }
+
+    .box img {
+      object-fit: cover;
+    }
+
+    .label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #f9c900;
+      color: black;
+      padding: 6px 12px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+   
+    /* Research Spotlight Section */
+    .research-section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 100px;
+      background: white;
+      color: black;
+    }
+
+    .research-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .research-left h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .research-left h2 span {
+      color: #D7B100;
+    }
+
+    .research-left p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .research-right {
+      flex: 1;
+      min-width: 300px;
+      padding-left: 50px;
+    }
+
+    .research-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .research-text {
+      flex: 1;
+    }
+
+    .research-text strong {
+      font-size: 20px;
+      color: #000;
+    }
+
+    .research-text p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .research-img {
+      width: 200px;
+      height: 120px;
+      margin-left: 20px;
+    }
+
+    .research-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .research-right {
+        padding-left: 0;
+      }
+    }
+
+    .zoom-image {
+      /* width: 300px; */
+      transition: transform 0.3s ease;
+    }
+
+    .zoom-image:hover {
+      transform: scale(1.07); /* 1.2 means 120% of original size */
+    }
+
+    .social-icon {
+      font-size: 30px;
+      color: #e1306c;  
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.3); /* makes it 20% bigger */
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      transform: transition 1s ease;
+    }
+
+    .dropdown-menu:hover  {
+      background-color: rgb(224, 216, 216); 
+    }
+
+    .footer-info {
+      color: gray;
+      text-decoration: none;
+      transform: transition 0.3s ease;
+    }
+
+    .footer-info:hover {
+      color: yellowgreen;
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="Rungta_Logo.png" alt="Logo">
+      <div>
+        <strong>SANJAY RUNGTA<br>GROUP OF INSTITUTIONS</strong><br>
+        <span class="highlight">NAAC GRADE A</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#"><i class="fa fa-home"></i></a></li>
+      <li>
+        <a href="#" class="dropdown-arrow">About Us</a>
+         <ul>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/the-gdr-society.php">Rungta Group</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/mission-vision.php">Mission & Vision</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/recognition.php">Recognition</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/leadership.php">Leadership</a></li>
+        </ul>
+    </li>
+      <li>
+        <a href="#" class="dropdown-arrow">Why Rungta</a>
+        <ul>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/alumni.php">Alumni</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/rnd.php">Research & Development</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/placement.php">Placements</a></li>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/tieups.php">Tie-ups</a></li>
+        </ul>
+    </li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Infrastructure</a></li>
+      <li><a href="#">Student Corner</a></li>
+      <li><a href="#">Career</a></li>
+      <li><a href="#">International Journal</a></li>
+      <li>
+        <a href="#" class="red-button dropdown-arrow">Admission</a>
+         <ul>
+          <li class="dropdown-menu"><a href="https://www.rungtacolleges.com/apply/">Apply Now</a></li>
+          <li class="dropdown-menu"><a href="#">Fee Structure</a></li>
+        </ul>  
+    </li>
+    </ul>
+
+    <div class="search-box">
+      <input type="text" placeholder="Enter keywords">
+      <i class="fa fa-search"></i>
+    </div>
+  </nav>
+
+  <!-- Student Life Section -->
+  <div class="container">
+    <h1>STUDENT <span style="font-weight: normal;">LIFE</span></h1>
+    <div class="grid">
+        <div class="c">
+            <img src="Auditorium.jpg" width="377px" height="449px" class="zoom-image">
+        <div class="label">Auditorium</div>
+    </div>
+    <div class="b">
+        <div class="Learn">
+            <img src="Learn.png" width="475px" height="203px" class="zoom-image">
+            <div class="label">Learn</div>
+        </div>
+      <div class="a">
+        <div class="Hostle">
+            <img src="Hostle.png" width="233px" height="211px" class="zoom-image">
+            <div class="label">Hostle</div>
+        </div>
+        <div class="Play">
+            <img src="Play.jpg" width="233px" height="211px" class="zoom-image">
+            <div class="label">Play</div>
+        </div>
+      </div>
+    </div>
+
+        <div class="Wifi-campus">
+            <img src="Wifi Campus.jpg" width="200px" height="455px" class="zoom-image">
+            <div class="label">Wifi-campus</div>
+        </div>
+    </div>
+</div>
+
+  <!-- Research Spotlight Section -->
+  <div class="research-section">
+    <div class="research-left">
+      <h2><span>RESEARCH</span><br>SPOTLIGHT</h2>
+      <p>The Group is keen to promote research work and output for faculty and students. Apart from the program requirements of dissertations and seminars, students engage in interesting real-time work.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.9281572571444!2d81.34146657498106!3d21.234697280674155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2923694518194d%3A0x37aaee1e1937351f!2sRSR%20Rungta%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1754288514900!5m2!1sen!2sin" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="research-right">
+      <div class="research-item">
+        <div class="research-text">
+          <strong>200+</strong><br>
+          <p>International Journals</p>
+        </div>
+        <div class="research-img"><img src="research1.png" alt="" class="zoom-image"></div>
+      </div>
+      <div class="research-item">
+        <div class="research-text">
+          <strong>150+</strong><br>
+          <p>International Conferences</p>
+        </div>
+        <div class="research-img"><img src="research2.png" alt="" class="zoom-image"></div>
+      </div>
+      <div class="research-item">
+        <div class="research-text">
+          <strong>100+</strong><br>
+          <p>National Conferences</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="research-text">
+          <strong>50+</strong><br>
+          <p>Well equipped Labs for departments</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="research-text">
+          <strong>1000+</strong><br>
+          <p>Published books in various areas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Founder Tribute Section -->
+<div style="display: flex; flex-wrap: wrap; background-color: #5C3A2C; color: white; padding: 60px 100px;">
+  <div style="flex: 1; min-width: 300px; margin-right: 20px;">
+    <h2 style="text-align: center; font-weight: 400; margin-bottom: 20px; color: yellowgreen;">LIGHTING MANY LIVES</h2>
+    <p style="line-height: 1.6; font-size: 18px; text-align: justify;">
+      The <strong>GD Rungta Educational Society</strong> started in the year 1999 with a mere initial intake of 240 students. Today, the scenario has undergone a remarkable transformation. There are more than 4000 students from different parts of the country and globe on its rolls today.<br><br>
+      As the strength of students pursuing Engineering, Technical, Management, Dental, Graduation and Post Graduation grows, the need for more teachers and supporting staff also grows with it. Our faculty is very carefully selected by our highly professional team who are the bridge between the parents and the institution, upholding the belief of the trust in ethical practices.
+    </p>
+  </div>
+  <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; background-color: #E5E5E5; color: #333; border-radius: 20px; padding: 20px; margin-top: 20px;">
+    <img src="Shri-GhanshyamDasRungta.png" alt="Founder" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+    <h3 style="text-align: center;">LATE SHRI GHANSHYAM DASJI RUNGTA<br>(GDR) (1925-2005)</h3>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer style="background: black; color: white; padding: 40px 100px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <div>
+    <h3>Campus</h3> 
+     <p><a href="https://www.rungtacolleges.com/rcdsr.php" class="footer-info">RCDSR</a><br></p>
+     <p><a href="https://www.rungtacolleges.com/rsrrcet.php" class="footer-info">RSRRCET</a><br></p>
+     <p><a href="https://www.rungtacolleges.com/rcst.php" class="footer-info">RCST</a><br></p>
+     <p><a href="https://www.rungtacolleges.com/rps.php" class="footer-info">RPS</a><br></p>
+    </div> 
+  <div>
+    <h3>FEE Portal</h3>
+    <p><a href="https://www.rungtacolleges.com/applynow/" class="footer-info">New Admission</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/courses-at-a-glance.php" class="footer-info">Fee Structure</a><br></p>
+  </div>
+  <div>
+    <h3>Why Rungta</h3>
+    <p><a href="https://www.rungtacolleges.com/alumni.php" class="footer-info">Alumini</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/placement.php" class="footer-info">Placements</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/tieups.php" class="footer-info">Tie-ups</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/testimonials.php" class="footer-info">Testimonials</a><br></p>
+  </div>
+  <div>
+    <h3>Other Links</h3>
+    <p><a href="https://www.rungtacolleges.com/library.php" class="footer-info">Infrastructure</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/career-rungta.php" class="footer-info">Career</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/contact-us.php" class="footer-info">Contact</a><br></p>
+    <p><a href="https://www.rungtacolleges.com/policy.php" class="footer-info">Privacy Policy</a><br></p>
+  </div>
+  <div>
+    <h3>Follow Us</h3>
+    <p style="font-size: 24px;">
+      <a href="https://x.com/" target="_blank"><i class="fab fa-twitter social-icon"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram social-icon" style="margin-left: 10px;"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook social-icon" style="margin-left: 10px;"></i></a>
+      <a href="https://www.google.com/" target="_blank"><i class="fab fa-google social-icon" style="margin-left: 10px;"></i></a>
+    </p>
+    <p style="margin-top: 10px;">© 2025 - All Rights Reserved.</p>
+  </div>
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.9281572571444!2d81.34146657498106!3d21.234697280674155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2923694518194d%3A0x37aaee1e1937351f!2sRSR%20Rungta%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1754288514900!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+</footer>
+
+</body>
+</html>
